@@ -38,7 +38,7 @@ jobs:
 
       - name: Build and tag the docker image
         run: |-
-          docker build --build-arg NODE_ENV=dev , --tag $REGION-docker.pkg-dev/$PROJECT_ID/$REGISTRY_NAME/$APP_NAME:$GITHUB_SHA
+          docker build --build-arg NODE_ENV=dev . --tag $REGION-docker.pkg-dev/$PROJECT_ID/$REGISTRY_NAME/$APP_NAME:$GITHUB_SHA
       
       - name: Push the image to the Google Artifact Registry (GAR)
         run: |-
