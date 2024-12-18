@@ -1,0 +1,7 @@
+# Ignorar carpetas
+logs/
+tmp/
+
+# Ignorar archivos específicos
+*.log
+.env
