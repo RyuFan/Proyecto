@@ -9,3 +9,4 @@ PyPDF2
 pandas
 faiss-cpu
 langgraph
+streamlit
