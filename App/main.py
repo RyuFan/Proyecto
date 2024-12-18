@@ -10,7 +10,7 @@ def augmentation_answer(name_vector: str = "vectorstore",
 	
 	# Configurar embeddings y cargar el vector store
 	embeddings = GoogleGenerativeAIEmbeddings(model=f"models/{model_embedding}")
-	store = FAISS.load_local(f"Data/vectorstore/", 
+	store = FAISS.load_local(f"Data/{name_vector}", 
 													embeddings, 
 													allow_dangerous_deserialization=True)
 
