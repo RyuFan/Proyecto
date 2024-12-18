@@ -1,6 +1,6 @@
 import streamlit as st
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
-from langchain.vectorstores import FAISS
+from langchain_community.vectorstores import FAISS
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.chains import RetrievalQA
 
@@ -10,7 +10,7 @@ def augmentation_answer(name_vector: str = "vectorstore",
 	
 	# Configurar embeddings y cargar el vector store
 	embeddings = GoogleGenerativeAIEmbeddings(model=f"models/{model_embedding}")
-	store = FAISS.load_local(f"Data/{name_vector}", 
+	store = FAISS.load_local(f"Data/vectorstore/{name_vector}", 
 													embeddings, 
 													allow_dangerous_deserialization=True)
 
