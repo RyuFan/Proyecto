@@ -14,6 +14,9 @@ env:
   APP_NAME: ${{ secrets.DEV_APP_NAME }}
   REGISTRY_NAME: ${{ secrets.ARTIFACT_REGISTER_NAME }}
   SERVICE_ACCOUNT_EMAIL: ${{ secrets.SERVICE_ACCOUNT_EMAIL }}
+  GOOGLE_CLOUD_PROJECT: ${{ secrets.PROJECT_ID }}
+  GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+  GOOGLE_CLOUD_REGION: ${{ secrets.GOOGLE_CLOUD_REGION }}
 
 jobs:
   build-and-deploy:
@@ -58,7 +61,7 @@ jobs:
           --platform "managed" \
           --service-account $SERVICE_ACCOUNT_EMAIL \
           --port 8080 \
-          --set-env-vars "PROJECT_ID=${{ secrets.PROJECT_ID }},GCP_SA_KEY="${{ secrets.GCP_SA_KEY }}",GOOGLE_CLOUD_REGION=${{ secrets.GOOGLE_CLOUD_REGION }}" \
+          --set-env-vars "GOOGLE_CLOUD_PROJECT=${{ secrets.PROJECT_ID }},GCP_SA_KEY=${{ secrets.GCP_SA_KEY }},GOOGLE_CLOUD_REGION=${{ secrets.GOOGLE_CLOUD_REGION }}"
           --quiet
 
       - name: Hacer el servicio público (Permitir invocaciones no autenticadas)
