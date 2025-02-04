@@ -1,0 +1,9 @@
+# Ignorar carpetas
+logs/
+tmp/
+Maria/
+Json/
+
+# Ignorar archivos específicos
+*.log
+.env
