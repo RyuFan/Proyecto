@@ -12,7 +12,7 @@ env:
   PROJECT_ID: ${{ secrets.PROJECT_ID }}
   REGION: ${{ secrets.REGION }}
   APP_NAME: ${{ secrets.DEV_APP_NAME }}
-  REGISTRY_NAME: ${{ secrets.ARTIFACT_REGISTER_NAME }}
+  REGISTRY_NAME: ${{ secrets.ARTIFACT_REGISTRY_NAME }}
   SERVICE_ACCOUNT_EMAIL: ${{ secrets.SERVICE_ACCOUNT_EMAIL }}
   GOOGLE_CLOUD_PROJECT: ${{ secrets.PROJECT_ID }}
   GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
