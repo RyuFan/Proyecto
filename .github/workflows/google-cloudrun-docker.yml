@@ -35,8 +35,9 @@ jobs:
       
       - name: Authorize Docker push
         #run: gcloud auth configure-docker $REGION-docker.pkg.dev
-        run: gcloud auth configure-docker ${{ env.REGION }}-docker.pkg.dev
-
+        #run: gcloud auth configure-docker ${{ env.REGION }}-docker.pkg.dev
+        run: gcloud auth configure-docker $REGION-docker.pkg.dev
+        
       - name: Build and tag the docker image
         run: |-
           docker build --build-arg NODE_ENV=dev . --tag $REGION-docker.pkg.dev/$PROJECT_ID/$REGISTRY_NAME/$APP_NAME:$GITHUB_SHA
