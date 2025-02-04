@@ -49,6 +49,7 @@ jobs:
       # - name: Build and push the Docker image
       #   run: |-
       #     gcloud builds submit . --tag $REGION-docker.pkg.dev/$PROJECT_ID/$REGISTRY_NAME/$APP_NAME:$GITHUB_SHA
+      #run:--set-env-vars "GOOGLE_CLOUD_PROJECT=${{ secrets.PROJECT_ID }},GCP_SA_KEY=${{ secrets.GCP_SA_KEY }},GOOGLE_CLOUD_REGION=${{ secrets.GOOGLE_CLOUD_REGION }}" \
 
       - name: Deploy
         run: |-
@@ -58,7 +59,6 @@ jobs:
           --platform "managed" \
           --service-account $SERVICE_ACCOUNT_EMAIL \
           --port 8080 \
-        #run:--set-env-vars "GOOGLE_CLOUD_PROJECT=${{ secrets.PROJECT_ID }},GCP_SA_KEY=${{ secrets.GCP_SA_KEY }},GOOGLE_CLOUD_REGION=${{ secrets.GOOGLE_CLOUD_REGION }}" \
           --quiet
 
       - name: Hacer el servicio público (Permitir invocaciones no autenticadas)
